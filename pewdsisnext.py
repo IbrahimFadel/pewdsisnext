@@ -31,6 +31,18 @@ def get_subcount(ID):
     return subcount
 
 
+def intWithCommas(x):
+    if type(x) not in [type(0), type(0)]:
+        raise TypeError("Parameter must be an integer.")
+    if x < 0:
+        return '-' + intWithCommas(-x)
+    result = ''
+    while x >= 1000:
+        x, r = divmod(x, 1000)
+        result = ",%03d%s" % (r, result)
+    return "%d%s" % (x, result)
+
+
 def run():
     global last_tweeted_message_index
 
@@ -45,16 +57,16 @@ def run():
         access_token_secret
     )
 
+    diff = intWithCommas(diff)
+    print(diff)
     message, index = generate_message(diff, last_tweeted_message_index, day)
     last_tweeted_message_index = index
     tw.update_status(status=message)
     print(f"Tweeted: {message}")
 
 
-# run()
-
-schedule.every().day.at("12:10").do(run)
+schedule.every().day.at("16:35").do(run)
 
 while True:
     schedule.run_pending()
-    time.sleep(60)
+    time.sleep(59)

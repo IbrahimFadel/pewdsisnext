@@ -1,10 +1,10 @@
 import random
 
 messages = [
-    "Day {}. Lol i thought pewdiepie was next @jakepaul ? The sub gap is: {}",
-    "Day {}. {}. Do you know what that number is @jakepaul ? That's how many more subscribers pewdiepie has than you",
-    "Day {}. {} people prefer pewdiepie's content to yours @jakepaul",
-    "Day {}. @jakepaul the population of a small nation({} to be exact) prefer pewdiepie's content over yours"
+    "Day {}, Lol i thought pewdiepie was next @jakepaul ? The sub gap is: {}",
+    "Day {}, {}. Do you know what that number is @jakepaul ? That's how many more subscribers pewdiepie has than you",
+    "Day {}, {} people prefer pewdiepie's content to yours @jakepaul",
+    "Day {}, @jakepaul the population of a small nation({} to be exact) prefer pewdiepie's content over yours"
 ]
 
 
