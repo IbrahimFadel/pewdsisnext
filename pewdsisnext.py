@@ -12,14 +12,16 @@ from messages import generate_message
 
 import requests
 import time
-import schedule
+import datetime
 
 
 PEWDIEPIE_CHANNEL_ID = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
 JAKE_PAUL_CHANNEL_ID = "UCcgVECVN4OKV6DH1jLkqmcA"
 
 last_tweeted_message_index = 0
-day = 0
+day = 1
+
+TWEET_TIME = "19:24"
 
 
 def get_subcount(ID):
@@ -44,7 +46,7 @@ def intWithCommas(x):
 
 
 def run():
-    global last_tweeted_message_index
+    global last_tweeted_message_index, day
 
     pewdiepie_subcount = get_subcount(PEWDIEPIE_CHANNEL_ID)
     jake_paul_subcount = get_subcount(JAKE_PAUL_CHANNEL_ID)
@@ -63,10 +65,13 @@ def run():
     last_tweeted_message_index = index
     tw.update_status(status=message)
     print(f"Tweeted: {message}")
+    day += 1
 
-
-schedule.every().day.at("16:35").do(run)
 
 while True:
-    schedule.run_pending()
-    time.sleep(59)
+    current_time = datetime.datetime.now().time()
+    print(str(current_time)[:5])
+    if(str(current_time)[:5] == TWEET_TIME):
+        run()
+        time.sleep(70)
+    time.sleep(5)
