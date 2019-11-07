@@ -7,4 +7,4 @@ Follow the bot, @NextPewdiepie
 
 ## Unfortunately
 
-In september of 2019, changed their api to round any subscriber count above 1000. Therefore the subgap will be displayed as something like the following: 82,000,000. I was hoping for it to show each subscriber, but oh well
+In september of 2019, youtube changed their api to round any subscriber count above 1000. Therefore the subgap will be displayed as something like the following: 82,000,000. I was hoping for it to show each subscriber, but oh well
